@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Recipiefinder } from "./component/recipieFinder";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { RecipieInfo } from "./RecipieInfo";
+import { RecipieInfo } from "./component/RecipieInfo";
 
 function App() {
   return (
