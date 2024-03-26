@@ -4,13 +4,13 @@ import { MealItem } from "./mealItem";
 import { RecipieIndex } from "./RecipieIndex";
 
 export const Recipiefinder = () => {
-  const [item, setItem] = useState();
+  const [item, setItem] = useState(null);
   const [api, setApi] = useState(
     "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
   );
   const [input, setInput] = useState("");
 
- useEffect(() => {
+  useEffect(() => {
     const fetchApi = async () => {
       let response = await fetch(api);
       let resJson = await response.json();
@@ -19,17 +19,14 @@ export const Recipiefinder = () => {
       console.log(item, "s");
     };
     fetchApi();
-   
-},[api]);
+  }, [api]);
 
   const getAlpha = (alpha) => {
     setApi(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`);
-   
   };
   const SearchRecipie = (evt) => {
-    if (evt.key == "Enter") {
+    if (evt.key === "Enter") {
       setApi(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`);
-     
     }
     console.log(api, "new");
   };
@@ -39,7 +36,7 @@ export const Recipiefinder = () => {
     <>
       <div className="main">
         <div className="heading">
-          <h2> Serach your recipies here! </h2>
+          <h2>  Hellow Chatoro! Serach your recipies here! </h2>
           <p>
             "Easily find delicious recipes with our Recipe Finder app, your
             go-to kitchen helper."
